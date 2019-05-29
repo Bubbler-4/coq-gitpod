@@ -4,6 +4,7 @@ FROM gitpod/workspace-full:latest
 # https://github.com/coq-community/docker-base/blob/master/Dockerfile
 # https://github.com/coq-community/docker-coq/blob/master/Dockerfile
 
+USER root
 RUN apt-get update -y -q \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends \
     autoconf \
@@ -41,6 +42,8 @@ RUN apt-get update -y -q \
   && DEBIAN_FRONTEND=noninteractive apt-get purge -y -q --auto-remove gnupg \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
+
+USER gitpod
 
 ENV NJOBS="2"
 ENV COMPILER="4.05.0"
