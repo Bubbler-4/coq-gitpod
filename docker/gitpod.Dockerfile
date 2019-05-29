@@ -65,7 +65,7 @@ RUN ["/bin/bash", "--login", "-c", "set -x \
   && opam clean -a -c -s --logs \
   && opam config list && opam list"]
 
-ENV COQ_VERSION="dev"
+ENV COQ_VERSION="8.9.1"
 ENV COQ_EXTRA_OPAM="coq-bignums"
 
 # Build coq with both min-version and edge+flambda opam switches
