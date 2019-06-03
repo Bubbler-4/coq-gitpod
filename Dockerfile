@@ -24,6 +24,7 @@ RUN apt-get update -y -q \
     sudo \
     time \
     unzip \
+    libgtksourceview2.0-dev \
   # Download the latest stable release of opam
   && version=$(curl -fsS https://api.github.com/repos/ocaml/opam/releases/latest \
   | grep '"tag_name":' | cut -d : -f 2 | tr -d \ ,\") \
