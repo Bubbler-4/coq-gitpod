@@ -1,4 +1,4 @@
-FROM gitpod/workspace-full:latest
+FROM gitpod/workspace-full-vnc:latest
 
 # copied from:
 # https://github.com/coq-community/docker-base/blob/master/Dockerfile
@@ -66,7 +66,7 @@ RUN ["/bin/bash", "--login", "-c", "set -x \
   && opam config list && opam list"]
 
 ENV COQ_VERSION="8.9.1"
-ENV COQ_EXTRA_OPAM="coq-bignums"
+ENV COQ_EXTRA_OPAM="coq-bignums coqide"
 
 # Build coq with both min-version and edge+flambda opam switches
 
